@@ -22,6 +22,18 @@ public class Primes {
                 }
             }
         }
+
+        // while (i < Math.sqrt(n)){
+        //     for (int j = i+1; j <= n; j++){
+        //         if (j % i == 0){
+        //             isPrime[j] = false;
+        //         }
+        //     }
+        //     i++;
+        //     while (i < Math.sqrt(n) && !isPrime[i]){
+        //         i++;
+        //     }
+        // }
         
         System.out.println("Prime numbers up to " + n + ":");
 

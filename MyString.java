@@ -20,22 +20,53 @@ public class MyString {
     public static String lowerCase(String str) {
 
         String allLowerCase = "";
+        char charToAdd;
+
         for (int i = 0; i < str.length(); i++){
-            if (96 < str.charAt(i) && str.charAt(i) < 123){
-                char stayLowerCase = str.charAt(i);
-                allLowerCase += stayLowerCase;
+            if (96 < (int)str.charAt(i) && (int)str.charAt(i) < 123){
+                charToAdd = str.charAt(i);
             }
-            if (64 < str.charAt(i) && str.charAt(i) < 91){
-                char becomeLowerCase = (char)(str.charAt(i)+32);
-                allLowerCase += becomeLowerCase;
+            if (64 < (int)str.charAt(i) && (int)str.charAt(i) < 91){
+                charToAdd = (char)((int)str.charAt(i)+32);
             }
+            else {
+                charToAdd = str.charAt(i);
+            }
+            allLowerCase += charToAdd;
         }
         return allLowerCase;
     }
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
-        // Replace the following statement with your code
+        
+        if (str2.length() > str1.length()) {
+            return false;
+        }
+
+        if (str2.length() == 0) {
+            return true;
+        }
+
+        char firstLetter = str2.charAt(0);
+        int counter = 0;
+
+        for (int i = 0; i < str1.length(); i++){
+            if (firstLetter == str1.charAt(i)){
+                for (int j = 0; j < str2.length(); j++){
+                    if (str1.charAt(i) != str2.charAt(j)){
+                        break;
+                    }
+                    else {
+                        counter++;
+                    }
+                    i++;
+                }
+            }
+        }
+        if (counter == str2.length()){
+            return true;
+        }
         return false;
     }
 }
