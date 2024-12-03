@@ -18,8 +18,19 @@ public class MyString {
 
     /** Returns the lowercase version of the given string. */
     public static String lowerCase(String str) {
-        // Replace the following statement with your code
-        return null;
+
+        String allLowerCase = "";
+        for (int i = 0; i < str.length(); i++){
+            if (96 < str.charAt(i) && str.charAt(i) < 123){
+                char stayLowerCase = str.charAt(i);
+                allLowerCase += stayLowerCase;
+            }
+            if (64 < str.charAt(i) && str.charAt(i) < 91){
+                char becomeLowerCase = (char)(str.charAt(i)+32);
+                allLowerCase += becomeLowerCase;
+            }
+        }
+        return allLowerCase;
     }
 
     /** If str1 contains str2, returns true; otherwise returns false. */

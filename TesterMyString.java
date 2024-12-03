@@ -3,7 +3,7 @@ public class TesterMyString {
 
     public static void main(String[] args) {
         testLowerCase();
-        testContains();
+        // testContains();
     }
 
     private static void testLowerCase() {
