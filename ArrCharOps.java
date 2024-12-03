@@ -132,7 +132,7 @@ public class ArrCharOps {
         char[]subArray = new char[length];
 
         for (int i = beginIndex; i < endIndex; i++){
-            arr[i] = subArray[i-beginIndex];
+            subArray[i - beginIndex] = arr[i];
         }
         return subArray;
     }
@@ -207,7 +207,6 @@ public class ArrCharOps {
         if (str1.length() > str2.length()){
             return 1;
         }
-
         return 0;
     }
 }
